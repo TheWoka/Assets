@@ -1,0 +1,68 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MenuGameScript : MonoBehaviour
+{
+
+    public GameObject panelGameMenu, panelGameSettings;
+    void Start()
+    {
+        if (panelGameSettings != null)
+            panelGameSettings.SetActive(false);
+        if (panelGameMenu != null)
+            panelGameMenu.SetActive(false);
+    }
+
+    // Реакция на эскейп
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Открытие и закрытие самого меню
+            if (panelGameMenu.activeSelf == false && panelGameSettings.activeSelf == false) panelGameMenu.SetActive(true);
+            else if (panelGameMenu.activeSelf == true && panelGameSettings.activeSelf == false) panelGameMenu.SetActive(false);
+
+            // Закрытие настроек на эскейп
+            if (panelGameSettings.activeSelf == true) {
+                panelGameSettings.SetActive(false);
+                panelGameMenu.SetActive(true);
+            }
+        }
+    }
+
+    // Для закрытия меню в игре
+    public void Continue()
+    {
+        panelGameMenu.SetActive(false);
+    }
+
+    // Для свапа на сцену меню
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
+        Debug.Log("Сцена меню");
+    }
+
+    // Для открытия кнопок настроек и скрытия панели стандартной
+    public void Settings()
+    {
+        if (panelGameSettings.activeSelf == false)
+        {
+            panelGameSettings.SetActive(true);
+            if (panelGameMenu != null) panelGameMenu.SetActive(false); 
+            Debug.Log("Открыл настройки");
+        }
+        else if (panelGameSettings.activeSelf == true)
+        {
+            panelGameSettings.SetActive(false);
+            if (panelGameMenu != null) panelGameMenu.SetActive(true); 
+            Debug.Log("Закрыл настройки");
+        }
+    }
+
+    // Для выхода 
+    public void Exit()
+    {
+        Application.Quit();
+    } 
+}
