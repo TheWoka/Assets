@@ -48,7 +48,7 @@ public class MenuGameScript : MonoBehaviour
     // Для свапа на сцену меню
     public void Menu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneTransition.SwitchToScene("Menu");
         Debug.Log("Сцена меню");
     }
 

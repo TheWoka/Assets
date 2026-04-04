@@ -16,8 +16,8 @@ public class HeightChecker : MonoBehaviour
         if (groundPoint == null || drillPoint == null || heightText == null)
             return;
 
-        float height = Mathf.Abs(drillPoint.position.y - (groundPoint.position.y + 4.51f));
+        float height = Mathf.Abs(drillPoint.position.y - (groundPoint.position.y));
 
-        heightText.text = $"{height}м";
+        heightText.text = $"{height.ToString("F" + decimalPlaces)}м";
     }
 }

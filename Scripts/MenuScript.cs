@@ -26,14 +26,14 @@ public class MenuScript : MonoBehaviour
     // Для запуска сцены игры
     public void Play()
     {
-        SceneManager.LoadScene("Play");
+        SceneTransition.SwitchToScene("Play");
         Debug.Log("Сцена игры");
     }
 
     // Для свапа на сцену меню
     public void Menu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneTransition.SwitchToScene("Menu");
         Debug.Log("Сцена меню");
     }
 

@@ -1,106 +1,106 @@
 fileFormatVersion: 2
-guid: ed49a6bae903bf74297469ca97be8bba
+guid: b1a490d7a4669fb459b32720f33ba118
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1697325079300439579
-    second: gg_0
+      213: 1785414105149673601
+    second: gg2_0
   - first:
-      213: 3045220316804532036
-    second: gg_1
+      213: 1333875656860973317
+    second: gg2_1
   - first:
-      213: 8783474221217149783
-    second: gg_2
+      213: -4874325689063390874
+    second: gg2_2
   - first:
-      213: -8924068199762580843
-    second: gg_3
+      213: -843491361031937788
+    second: gg2_3
   - first:
-      213: -653681584351831605
-    second: gg_4
+      213: -4084026120370812275
+    second: gg2_4
   - first:
-      213: -3031471794728928684
-    second: gg_5
+      213: 2397777184341082349
+    second: gg2_5
   - first:
-      213: 7917687139287341780
-    second: gg_6
+      213: -2951218406479047427
+    second: gg2_6
   - first:
-      213: 4579942898269041928
-    second: gg_7
+      213: 1512921597286149053
+    second: gg2_7
   - first:
-      213: -6765845708693500897
-    second: gg_8
+      213: -8744549245054859393
+    second: gg2_8
   - first:
-      213: -8319254032702696144
-    second: gg_9
+      213: 7353328155439894375
+    second: gg2_9
   - first:
-      213: -7179015468217912070
-    second: gg_10
+      213: 3995729373398605170
+    second: gg2_10
   - first:
-      213: 3525139032309643506
-    second: gg_11
+      213: 1478483067148694397
+    second: gg2_11
   - first:
-      213: -5602033013175900059
-    second: gg_12
+      213: 7111799266519692235
+    second: gg2_12
   - first:
-      213: 5395959350170220211
-    second: gg_13
+      213: 3802913776241283629
+    second: gg2_13
   - first:
-      213: 8206161044353094319
-    second: gg_14
+      213: -8715616136932034624
+    second: gg2_14
   - first:
-      213: 8231815631312100145
-    second: gg_15
+      213: -5568535884624391744
+    second: gg2_15
   - first:
-      213: 5285805921267009658
-    second: gg_16
+      213: 2624834052929122507
+    second: gg2_16
   - first:
-      213: -7941631569961203034
-    second: gg_17
+      213: 2781102963403821639
+    second: gg2_17
   - first:
-      213: -2250418963803011906
-    second: gg_18
+      213: -6099572573560065342
+    second: gg2_18
   - first:
-      213: 7257834289567455479
-    second: gg_19
+      213: -4460187700835240831
+    second: gg2_19
   - first:
-      213: 2955572790963159361
-    second: gg_20
+      213: 8263668678162566850
+    second: gg2_20
   - first:
-      213: -7564809011043115758
-    second: gg_21
+      213: -9153879996876315719
+    second: gg2_21
   - first:
-      213: 964830873606497792
-    second: gg_22
+      213: -5769414984394093207
+    second: gg2_22
   - first:
-      213: 8384968086083618432
-    second: gg_23
+      213: 9082526198421409241
+    second: gg2_23
   - first:
-      213: 4872961811577950662
-    second: gg_24
+      213: 4430163269778215334
+    second: gg2_24
   - first:
-      213: 9185049393868855246
-    second: gg_25
+      213: -838982893574485796
+    second: gg2_25
   - first:
-      213: 5608641802129602191
-    second: gg_26
+      213: 5671289124388236209
+    second: gg2_26
   - first:
-      213: -4177390794112107058
-    second: gg_27
+      213: -2090531100564808030
+    second: gg2_27
   - first:
-      213: -4859715539034785867
-    second: gg_28
+      213: -6988785474318695575
+    second: gg2_28
   - first:
-      213: 8495437045297125350
-    second: gg_29
+      213: -7736676801503869199
+    second: gg2_29
   - first:
-      213: -3980492074309733300
-    second: gg_30
+      213: -794026507523483839
+    second: gg2_30
   - first:
-      213: 434324119450569990
-    second: gg_31
+      213: 5315450911640527037
+    second: gg2_31
   - first:
-      213: -2166543480086723709
-    second: gg_32
+      213: 8486934120782506337
+    second: gg2_32
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -196,7 +196,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle1
+      name: Idle1
       rect:
         serializedVersion: 2
         x: 56
@@ -211,14 +211,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1e7014ba2c1e8710800000000000000
-      internalID: 1697325079300439579
+      spriteID: 1801b6a4ba017c810800000000000000
+      internalID: 1785414105149673601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle2
+      name: Idle2
       rect:
         serializedVersion: 2
         x: 183
@@ -233,14 +233,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 753f271744b25e970800000000000000
-      internalID: 8783474221217149783
+      spriteID: 661c0df6c9aea5cb0800000000000000
+      internalID: -4874325689063390874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle3
+      name: Idle3
       rect:
         serializedVersion: 2
         x: 312
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59aaac90147572480800000000000000
-      internalID: -8924068199762580843
+      spriteID: 401a49e73115b44f0800000000000000
+      internalID: -843491361031937788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle4
+      name: Idle4
       rect:
         serializedVersion: 2
         x: 440
@@ -277,14 +277,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc99e78ff08ade6f0800000000000000
-      internalID: -653681584351831605
+      spriteID: d8a81e1b1ef9257c0800000000000000
+      internalID: -4084026120370812275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle5
+      name: Idle5
       rect:
         serializedVersion: 2
         x: 568
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45af090d67c0ee5d0800000000000000
-      internalID: -3031471794728928684
+      spriteID: de0cf2b25ad964120800000000000000
+      internalID: 2397777184341082349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle6
+      name: Idle6
       rect:
         serializedVersion: 2
         x: 696
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80536e6ecc93f8f30800000000000000
-      internalID: 4579942898269041928
+      spriteID: dbbe14b4d2afef410800000000000000
+      internalID: 1512921597286149053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move1
+      name: Walk1
       rect:
         serializedVersion: 2
         x: 57
@@ -343,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0351588d8821c8c80800000000000000
-      internalID: -8319254032702696144
+      spriteID: 76f8fdd6ff44c0660800000000000000
+      internalID: 7353328155439894375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move2
+      name: Walk2
       rect:
         serializedVersion: 2
         x: 186
@@ -365,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af436dbb7730f5c90800000000000000
-      internalID: -7179015468217912070
+      spriteID: 27d9400e1bea37730800000000000000
+      internalID: 3995729373398605170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move3
+      name: Walk3
       rect:
         serializedVersion: 2
         x: 313
@@ -387,14 +387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 568a3a5c7a49142b0800000000000000
-      internalID: -5602033013175900059
+      spriteID: bc33ac2c0cf22b260800000000000000
+      internalID: 7111799266519692235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move4
+      name: Walk4
       rect:
         serializedVersion: 2
         x: 440
@@ -409,14 +409,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b6f751a07c42ea40800000000000000
-      internalID: 5395959350170220211
+      spriteID: d221d484ee9a6c430800000000000000
+      internalID: 3802913776241283629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: move5
+      name: Walk5
       rect:
         serializedVersion: 2
         x: 568
@@ -431,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa29052edf322e170800000000000000
-      internalID: 8206161044353094319
+      spriteID: 0c7f08ffc49eb0780800000000000000
+      internalID: -8715616136932034624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_15
+      name: gg2_15
       rect:
         serializedVersion: 2
         x: 47
@@ -453,14 +453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13b9dd0e3b84d3270800000000000000
-      internalID: 8231815631312100145
+      spriteID: 0c192f5cd1698b2b0800000000000000
+      internalID: -5568535884624391744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_16
+      name: gg2_16
       rect:
         serializedVersion: 2
         x: 175
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a78c6c0ea74fa5940800000000000000
-      internalID: 5285805921267009658
+      spriteID: bc070370aa84d6420800000000000000
+      internalID: 2624834052929122507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_18
+      name: gg2_18
       rect:
         serializedVersion: 2
         x: 310
@@ -497,14 +497,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb408ba20e7e4c0e0800000000000000
-      internalID: -2250418963803011906
+      spriteID: 2c2bc3faf07f95ba0800000000000000
+      internalID: -6099572573560065342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_19
+      name: gg2_19
       rect:
         serializedVersion: 2
         x: 432
@@ -519,14 +519,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f8515c25d109b460800000000000000
-      internalID: 7257834289567455479
+      spriteID: 184362ccaea3a12c0800000000000000
+      internalID: -4460187700835240831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_20
+      name: gg2_20
       rect:
         serializedVersion: 2
         x: 560
@@ -541,14 +541,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1414b294bcd440920800000000000000
-      internalID: 2955572790963159361
+      spriteID: 2cec66741e27ea270800000000000000
+      internalID: 8263668678162566850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_22
+      name: gg2_22
       rect:
         serializedVersion: 2
         x: 47
@@ -563,14 +563,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00625a15194c36d00800000000000000
-      internalID: 964830873606497792
+      spriteID: 96dcf5da3abeeefa0800000000000000
+      internalID: -5769414984394093207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_23
+      name: gg2_23
       rect:
         serializedVersion: 2
         x: 177
@@ -585,14 +585,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08640008c046d5470800000000000000
-      internalID: 8384968086083618432
+      spriteID: 9dd4618c47d9b0e70800000000000000
+      internalID: 9082526198421409241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_24
+      name: gg2_24
       rect:
         serializedVersion: 2
         x: 305
@@ -607,14 +607,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c1d52713fc30a340800000000000000
-      internalID: 4872961811577950662
+      spriteID: 6a11d18950a1b7d30800000000000000
+      internalID: 4430163269778215334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_25
+      name: gg2_25
       rect:
         serializedVersion: 2
         x: 434
@@ -629,14 +629,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec758fd52c9d77f70800000000000000
-      internalID: 9185049393868855246
+      spriteID: cd80ddfd0855b54f0800000000000000
+      internalID: -838982893574485796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_26
+      name: gg2_26
       rect:
         serializedVersion: 2
         x: 572
@@ -651,14 +651,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f867750d006e5dd40800000000000000
-      internalID: 5608641802129602191
+      spriteID: 1bb62bd296774be40800000000000000
+      internalID: 5671289124388236209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_27
+      name: gg2_27
       rect:
         serializedVersion: 2
         x: 700
@@ -673,14 +673,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecdf5fc943de606c0800000000000000
-      internalID: -4177390794112107058
+      spriteID: 2ae9de64a01fcf2e0800000000000000
+      internalID: -2090531100564808030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_28
+      name: gg2_28
       rect:
         serializedVersion: 2
         x: 822
@@ -695,14 +695,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b7b2621772de8cb0800000000000000
-      internalID: -4859715539034785867
+      spriteID: 96303d7a3a8d20f90800000000000000
+      internalID: -6988785474318695575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_29
+      name: gg2_29
       rect:
         serializedVersion: 2
         x: 49
@@ -717,14 +717,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e711a06bfad5e570800000000000000
-      internalID: 8495437045297125350
+      spriteID: 1f64b50907dc1a490800000000000000
+      internalID: -7736676801503869199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_30
+      name: gg2_30
       rect:
         serializedVersion: 2
         x: 146
@@ -739,14 +739,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c44b2874c8372c8c0800000000000000
-      internalID: -3980492074309733300
+      spriteID: 14791dc291d0bf4f0800000000000000
+      internalID: -794026507523483839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_31
+      name: gg2_31
       rect:
         serializedVersion: 2
         x: 275
@@ -761,14 +761,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60d4c394c77070600800000000000000
-      internalID: 434324119450569990
+      spriteID: db02c51117644c940800000000000000
+      internalID: 5315450911640527037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gg_32
+      name: gg2_32
       rect:
         serializedVersion: 2
         x: 411
@@ -783,8 +783,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3830ef60f24eee1e0800000000000000
-      internalID: -2166543480086723709
+      spriteID: 169226dfd95a7c570800000000000000
+      internalID: 8486934120782506337
       vertices: []
       indices: 
       edges: []
@@ -793,7 +793,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 541ff81b0e1392e46a5a1c4eff88acf6
+    spriteID: 9ccbb2ad3fa3d6047ad4362aab585d57
     internalID: 0
     vertices: []
     indices: 
@@ -803,39 +803,39 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gg_1: 3045220316804532036
-      gg_11: 3525139032309643506
-      gg_15: 8231815631312100145
-      gg_16: 5285805921267009658
-      gg_17: -7941631569961203034
-      gg_18: -2250418963803011906
-      gg_19: 7257834289567455479
-      gg_20: 2955572790963159361
-      gg_21: -7564809011043115758
-      gg_22: 964830873606497792
-      gg_23: 8384968086083618432
-      gg_24: 4872961811577950662
-      gg_25: 9185049393868855246
-      gg_26: 5608641802129602191
-      gg_27: -4177390794112107058
-      gg_28: -4859715539034785867
-      gg_29: 8495437045297125350
-      gg_30: -3980492074309733300
-      gg_31: 434324119450569990
-      gg_32: -2166543480086723709
-      gg_6: 7917687139287341780
-      gg_8: -6765845708693500897
-      idle1: 1697325079300439579
-      idle2: 8783474221217149783
-      idle3: -8924068199762580843
-      idle4: -653681584351831605
-      idle5: -3031471794728928684
-      idle6: 4579942898269041928
-      move1: -8319254032702696144
-      move2: -7179015468217912070
-      move3: -5602033013175900059
-      move4: 5395959350170220211
-      move5: 8206161044353094319
+      Idle1: 1785414105149673601
+      Idle2: -4874325689063390874
+      Idle3: -843491361031937788
+      Idle4: -4084026120370812275
+      Idle5: 2397777184341082349
+      Idle6: 1512921597286149053
+      Walk1: 7353328155439894375
+      Walk2: 3995729373398605170
+      Walk3: 7111799266519692235
+      Walk4: 3802913776241283629
+      Walk5: -8715616136932034624
+      gg2_1: 1333875656860973317
+      gg2_11: 1478483067148694397
+      gg2_15: -5568535884624391744
+      gg2_16: 2624834052929122507
+      gg2_17: 2781102963403821639
+      gg2_18: -6099572573560065342
+      gg2_19: -4460187700835240831
+      gg2_20: 8263668678162566850
+      gg2_21: -9153879996876315719
+      gg2_22: -5769414984394093207
+      gg2_23: 9082526198421409241
+      gg2_24: 4430163269778215334
+      gg2_25: -838982893574485796
+      gg2_26: 5671289124388236209
+      gg2_27: -2090531100564808030
+      gg2_28: -6988785474318695575
+      gg2_29: -7736676801503869199
+      gg2_30: -794026507523483839
+      gg2_31: 5315450911640527037
+      gg2_32: 8486934120782506337
+      gg2_6: -2951218406479047427
+      gg2_8: -8744549245054859393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
