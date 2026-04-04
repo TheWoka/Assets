@@ -4,51 +4,66 @@ public class CharacterScript : MonoBehaviour
 {
 
     // Переменные физические, счетчики и тп
-    [SerializeField] public float speed = 5.0f, JumpForce = 2.0f;
+    [SerializeField] public float speed = 5.0f, JumpForce = 5.0f;
+    [SerializeField] private float groundRadius = 0.25f;
     public float height;
     private Vector2 moveInput;
+    private bool jumpRequested = false;
 
     // Переменные компонентов (скриптов)
     private Rigidbody2D body;
     private Transform transform;
     private Animator animator;
     private SpriteRenderer spr;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
 
     // Булевы
-    private bool isGrounded = true;
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+    }
 
     void Start()
     {
-        moveInput.y = 0; // Убрать мусор
+        moveInput.y = 0;
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
     }
 
-    // Использовать это для ОСТАЛЬНОГО ЧТО НЕ ФИЗИКА
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
+        HandleInput();
         Animations();
+    }
+
+    void FixedUpdate() {
         Move();
     }
 
     // Движение персонажа
     void Move() {
         moveInput.x = Input.GetAxisRaw("Horizontal");
-        /* moveInput.y = Input.GetAxisRaw("Vertical"); */ // ПОКА НЕ МОЖЕТ вверх-вниз. Только вправо и влево
-        body.MovePosition(body.position + moveInput.normalized * speed * Time.fixedDeltaTime);
+        body.linearVelocity = new Vector2(moveInput.x * speed, body.linearVelocity.y);
+
+        if (jumpRequested && IsGrounded())
+        {
+            body.linearVelocity = new Vector2(body.linearVelocity.x, JumpForce);
+            Debug.Log("Прыжок!");
+        }
+        
+        // Сброс флага после прыжка
+        jumpRequested = false;
     }
 
-    void Jump()
+    // Проверка нажатия кнопки
+    void HandleInput()
     {
-        body.linearVelocity = new Vector2(body.linearVelocity.x, 0);
-        body.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
-        // Нет обратного включения. ТРЕБУЕТСЯ проверка того когда чел приземляется обратно короче.
-        Debug.Log("Прыжок выполнен");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpRequested = true;
+        }
     }
 
     // Анимации персонажа
@@ -56,6 +71,9 @@ public class CharacterScript : MonoBehaviour
     {
         bool isMoving = moveInput != Vector2.zero;
 
-        // Далее появятся строчки для передачи переменных в анимации
+        if (moveInput.x > 0.01f)
+            spr.flipX = false;
+        else if (moveInput.x < -0.01f)
+            spr.flipX = true;
     }
 }

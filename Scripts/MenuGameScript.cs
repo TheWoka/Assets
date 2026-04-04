@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuGameScript : MonoBehaviour
 {
 
-    public GameObject panelGameMenu, panelGameSettings;
+    public GameObject panelGameMenu, panelGameSettings, menuButton;
     void Start()
     {
         if (panelGameSettings != null)
@@ -19,8 +19,8 @@ public class MenuGameScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // Открытие и закрытие самого меню
-            if (panelGameMenu.activeSelf == false && panelGameSettings.activeSelf == false) panelGameMenu.SetActive(true);
-            else if (panelGameMenu.activeSelf == true && panelGameSettings.activeSelf == false) panelGameMenu.SetActive(false);
+            if (panelGameSettings.activeSelf == false) Continue();
+            else if (panelGameSettings.activeSelf == false) Continue();
 
             // Закрытие настроек на эскейп
             if (panelGameSettings.activeSelf == true) {
@@ -36,10 +36,12 @@ public class MenuGameScript : MonoBehaviour
         if (panelGameMenu.activeSelf == false)
         {
             panelGameMenu.SetActive(true);
+            menuButton.SetActive(false);
         }
         else if (panelGameMenu.activeSelf == true)
         {
             panelGameMenu.SetActive(false);
+            menuButton.SetActive(true);
         }
     }
 
