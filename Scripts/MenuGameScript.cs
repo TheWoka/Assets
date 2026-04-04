@@ -33,7 +33,14 @@ public class MenuGameScript : MonoBehaviour
     // Для закрытия меню в игре
     public void Continue()
     {
-        panelGameMenu.SetActive(false);
+        if (panelGameMenu.activeSelf == false)
+        {
+            panelGameMenu.SetActive(true);
+        }
+        else if (panelGameMenu.activeSelf == true)
+        {
+            panelGameMenu.SetActive(false);
+        }
     }
 
     // Для свапа на сцену меню
