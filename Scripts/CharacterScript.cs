@@ -23,6 +23,14 @@ public class CharacterScript : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
     }
+    private void OnDrawGizmos()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = IsGrounded() ? Color.green : Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+        }
+    }
 
     void Start()
     {
@@ -70,6 +78,7 @@ public class CharacterScript : MonoBehaviour
     void Animations()
     {
         bool isMoving = moveInput != Vector2.zero;
+        animator.SetBool("IsMoving", isMoving);
 
         if (moveInput.x > 0.01f)
             spr.flipX = false;
