@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuGameScript : MonoBehaviour
 {
-
+    [SerializeField] private Vector2 hotSpot = Vector2.zero;
+    [SerializeField] private Texture2D cursorTexture;
+    
     public GameObject panelGameMenu, panelGameSettings, menuButton;
     void Start()
     {
+        Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
         if (panelGameSettings != null)
             panelGameSettings.SetActive(false);
         if (panelGameMenu != null)

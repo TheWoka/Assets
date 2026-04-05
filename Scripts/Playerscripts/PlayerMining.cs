@@ -7,12 +7,15 @@ public class PlayerMining : MonoBehaviour
     [Header("Настройки добычи")]
     [SerializeField] private float mineRange = 1.5f, oreDamage = 5.0f;
     [SerializeField] private LayerMask oreLayer;
+    
 
     // Кэш блока который долбим
     private Camera mainCamera;
+    private Animator animator;
     private Ore currentOre;
     void Start()
     {
+        animator = GetComponent<Animator>();
         mainCamera = Camera.main;
     }
 
@@ -40,6 +43,7 @@ public class PlayerMining : MonoBehaviour
                 {
                     currentOre = ore;
                     currentOre.ApplyDamage(oreDamage * Time.deltaTime);
+                    PlayMiningAnimation();
                 }
                 else currentOre = null;
             }
@@ -48,9 +52,23 @@ public class PlayerMining : MonoBehaviour
         else
         {
             currentOre = null;
+            if (animator != null)
+                animator.SetBool("IsMining", false);
         }
     }
 
+    void PlayMiningAnimation()
+    {
+        if (animator == null) return;
+        
+        /* if (Time.time - lastMiningTime >= miningAnimationCooldown)
+        {
+            animator.SetTrigger("Mine");
+            lastMiningTime = Time.time;
+        } */
+        
+        animator.SetBool("IsMining", true);
+    }
 
     // Дебаг отрисовка области копания
     private void OnDrawGizmosSelected()

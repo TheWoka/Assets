@@ -15,13 +15,14 @@ public class CharacterScript : MonoBehaviour
     private Transform transform;
     private Animator animator;
     private SpriteRenderer spr;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask groundLayer, oreLayer;
     [SerializeField] private Transform groundCheck;
 
     // Булевы
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer)
+        || Physics2D.OverlapCircle(groundCheck.position, groundRadius, oreLayer);
     }
     private void OnDrawGizmos()
     {

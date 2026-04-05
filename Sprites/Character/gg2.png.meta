@@ -551,10 +551,10 @@ TextureImporter:
       name: gg2_22
       rect:
         serializedVersion: 2
-        x: 47
-        y: 79
-        width: 33
-        height: 36
+        x: 51
+        y: 80
+        width: 28
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,10 +573,10 @@ TextureImporter:
       name: gg2_23
       rect:
         serializedVersion: 2
-        x: 177
-        y: 79
-        width: 51
-        height: 37
+        x: 178
+        y: 80
+        width: 49
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,10 +595,10 @@ TextureImporter:
       name: gg2_24
       rect:
         serializedVersion: 2
-        x: 305
-        y: 79
-        width: 52
-        height: 37
+        x: 306
+        y: 80
+        width: 50
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -617,10 +617,10 @@ TextureImporter:
       name: gg2_25
       rect:
         serializedVersion: 2
-        x: 434
-        y: 79
-        width: 51
-        height: 46
+        x: 435
+        y: 80
+        width: 49
+        height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -639,10 +639,10 @@ TextureImporter:
       name: gg2_26
       rect:
         serializedVersion: 2
-        x: 572
-        y: 79
-        width: 41
-        height: 45
+        x: 573
+        y: 80
+        width: 39
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -661,10 +661,10 @@ TextureImporter:
       name: gg2_27
       rect:
         serializedVersion: 2
-        x: 700
-        y: 79
-        width: 42
-        height: 46
+        x: 701
+        y: 80
+        width: 40
+        height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,10 +683,10 @@ TextureImporter:
       name: gg2_28
       rect:
         serializedVersion: 2
-        x: 822
-        y: 79
-        width: 48
-        height: 43
+        x: 823
+        y: 80
+        width: 46
+        height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
