@@ -2,17 +2,14 @@ using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-
     // Переменные физические, счетчики и тп
     [SerializeField] public float speed = 5.0f, JumpForce = 5.0f;
     [SerializeField] private float groundRadius = 0.25f;
-    public float height;
     private Vector2 moveInput;
     private bool jumpRequested = false;
 
     // Переменные компонентов (скриптов)
     private Rigidbody2D body;
-    private Transform transform;
     private Animator animator;
     private SpriteRenderer spr;
     [SerializeField] private LayerMask groundLayer, oreLayer;
@@ -59,7 +56,7 @@ public class CharacterScript : MonoBehaviour
         if (jumpRequested && IsGrounded())
         {
             body.linearVelocity = new Vector2(body.linearVelocity.x, JumpForce);
-            Debug.Log("Прыжок!");
+            Debug.Log("Прыжок персонажа");
         }
         
         // Сброс флага после прыжка

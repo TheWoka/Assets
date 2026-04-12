@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6400062233901054582}
   - component: {fileID: 1809794522685550122}
-  - component: {fileID: 5561602105899227007}
+  - component: {fileID: 7447398773026438616}
   m_Layer: 5
   m_Name: LoadingScreen
   m_TagString: Untagged
@@ -61,7 +61,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5561602105899227007
+--- !u!114 &7447398773026438616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c669daa255c0ed849a604aac01f2b6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  loadText: {fileID: 8600528874897834676}
+  loadText: {fileID: 0}
+  loadingPanel: {fileID: 5463239772304830478}
+  exitAnimDuration: 1
 --- !u!1 &7254712309454366505
 GameObject:
   m_ObjectHideFlags: 0

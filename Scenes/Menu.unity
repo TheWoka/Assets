@@ -268,10 +268,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5561602105899227007, guid: 3214fdaa4ed575b4c96e20c2b6cc5244, type: 3}
-      propertyPath: loadingPanel
-      value: 
-      objectReference: {fileID: 230449552}
     - target: {fileID: 6400062233901054582, guid: 3214fdaa4ed575b4c96e20c2b6cc5244, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -352,7 +348,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7447398773026438616, guid: 3214fdaa4ed575b4c96e20c2b6cc5244, type: 3}
+      propertyPath: loadText
+      value: 
+      objectReference: {fileID: 1898859518}
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -360,11 +361,6 @@ PrefabInstance:
 --- !u!224 &230449551 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6400062233901054582, guid: 3214fdaa4ed575b4c96e20c2b6cc5244, type: 3}
-  m_PrefabInstance: {fileID: 230449550}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &230449552 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5463239772304830478, guid: 3214fdaa4ed575b4c96e20c2b6cc5244, type: 3}
   m_PrefabInstance: {fileID: 230449550}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &249984971
@@ -1734,7 +1730,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 800883274}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: Village
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2522,6 +2518,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889893111}
   m_CullTransparentMesh: 1
+--- !u!114 &1898859518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8600528874897834676, guid: 3214fdaa4ed575b4c96e20c2b6cc5244, type: 3}
+  m_PrefabInstance: {fileID: 230449550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &2109411706
 GameObject:
   m_ObjectHideFlags: 0

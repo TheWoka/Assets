@@ -4,7 +4,9 @@ using TMPro;
 public class PlayerResources : MonoBehaviour
 {
     [Header("Счётчик руды")]
-    [SerializeField] private int traviyCount = 0, coalCount = 0, vibraniumCount = 0;
+    [SerializeField] private int traviyCount = 0;
+    [SerializeField] private int coalCount = 0;
+    [SerializeField] private int vibraniumCount = 0;
 
     [SerializeField] private TextMeshProUGUI oreTraviyText, oreCoalText, oreVibroText; 
     
