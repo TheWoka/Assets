@@ -11,7 +11,7 @@ public class DrillController : MonoBehaviour
     [Header("Скорость")]
     [SerializeField] private float baseSpeed = 5.0f;
 
-    [SerializeField] private float speedIncreasePerStop = 1.0f;
+    /* [SerializeField] private float speedIncreasePerStop = 1.0f; */ // В УЛУЧШЕНИЕ НАХУЙ
 
     [SerializeField] private float maxSpeed = 15.0f;
     public bool isActive = false;
@@ -54,7 +54,7 @@ public class DrillController : MonoBehaviour
             isMoving = false;
             currentStopIndex++;
 
-            currentSpeed += speedIncreasePerStop;
+            /* currentSpeed += speedIncreasePerStop; */ // Ц Ц Ц потом
 
             OnReachedStop?.Invoke();
             return;

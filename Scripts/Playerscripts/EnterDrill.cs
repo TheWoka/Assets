@@ -17,6 +17,9 @@ public class EnterDrill : MonoBehaviour
     [Header("Кулдаун бура")]
     [SerializeField] private float reenterCooldown = 40f;
 
+    [Header("Приколы с UI")]
+    [SerializeField] private GameObject choosePanel;
+
     private bool isInside = false;
     private bool canEnterDrill = true;
     private bool startInsideDrill = true;
@@ -54,11 +57,11 @@ public class EnterDrill : MonoBehaviour
         float distance = Vector2.Distance(transform.position, drill.transform.position);
         if (Input.GetKeyDown(KeyCode.E) && !isInside)
         {
-            TryEnter();
+            ChooseEnter();
         }
     }
 
-    void TryEnter()
+    void ChooseEnter()
     {
         Debug.Log("Попытка войти");
         if (!canEnterDrill) return;
@@ -67,12 +70,17 @@ public class EnterDrill : MonoBehaviour
         if (distance > enterDistance) return;
         if (!drill.HasMoreStops) return;
 
-        Enter();
+        if (choosePanel.activeSelf == false) 
+        {
+            choosePanel.SetActive(true);
+            Debug.Log("Активация панели");
+        }
     }
 
-    void Enter()
+    public void Enter()
     {
         isInside = true;
+        choosePanel.SetActive(false);
 
         playerScript.enabled = false;
         playerRb.linearVelocity = Vector2.zero;
@@ -85,14 +93,19 @@ public class EnterDrill : MonoBehaviour
         if (turretController != null)
         turretController.SetControl(true);
 
-        Debug.Log("Запуск бура ДАЛЕЕ МЕНЮ");
+        Debug.Log("Запуск бура");
         drill.StartRide();
+    }
+
+    public void UpgradeDrill()
+    {
+        Debug.Log("Тут будет улучшение бура!");
+        choosePanel.SetActive(false);
     }
 
     void HandleReachedStop()
     {
         if (!isInside) return;
-
         ForceExitAtStop();
     }
 
@@ -110,6 +123,7 @@ public class EnterDrill : MonoBehaviour
 
         cameraFollow.target = transform;
         cameraFollow.SetZoom(false);
+        Debug.Log("Сбросил камеру в false");
 
         StartReenterCooldown();
     }

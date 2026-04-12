@@ -25,6 +25,7 @@ public class VillageDrill : MonoBehaviour
         SceneTransition.SwitchToScene("Play");
     }
 
+    // Дебаг отрисовка
     void OnDrawGizmosSelected()
     {
         if (drill == null) return;

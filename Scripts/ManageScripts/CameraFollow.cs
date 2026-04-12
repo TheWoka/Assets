@@ -13,10 +13,16 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float maxMouseOffset = 3f;
     [SerializeField] private float mouseInfluence = 1f;
     [SerializeField] private float mouseSmooth = 5f;
+    [SerializeField] private float backgroundBaseSize = 10f;
     [SerializeField] private bool useMouseLookInDrill = false;
+    [SerializeField] private Transform background;
+    // СОБЫТИЕ ДЛЯ ФОНА
+    public System.Action<float> OnZoomChanged;
+
     public Transform target;
     private Camera cam;
     private float currentZ;
+    private float currentZoomSize;
     private Vector3 currentMouseOffset;
 
     void Awake()
@@ -71,11 +77,25 @@ public class CameraFollow : MonoBehaviour
             desiredPosition,
             follow_speed * Time.deltaTime
         );
+
+        // Растягивание фона под зум камеры
+        /* if (background != null)
+        {
+            float cameraHeight = cam.orthographicSize * 2f;
+            float cameraWidth = cameraHeight * cam.aspect;
+            
+            float scale = cameraWidth / backgroundBaseSize;
+            background.localScale = new Vector3(scale, scale, 1f);
+        } */ 
     }
 
     public void SetZoom(bool inDrill)
     {
+        if (cam == null) cam = GetComponent<Camera>();
+
         cam.orthographicSize = inDrill ? zoomedOutSize : normalSize;
         useMouseLookInDrill = inDrill;
+
+        OnZoomChanged?.Invoke(cam.orthographicSize);
     }
 }

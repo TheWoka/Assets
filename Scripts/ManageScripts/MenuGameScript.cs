@@ -5,6 +5,7 @@ public class MenuGameScript : MonoBehaviour
 {
     [SerializeField] private Vector2 hotSpot = Vector2.zero;
     [SerializeField] private Texture2D cursorTexture;
+    [SerializeField] private EnterDrill enterDrill;
     
     public GameObject panelGameMenu, panelGameSettings, gameOverPanel, menuButton;
     void Start()
@@ -53,10 +54,21 @@ public class MenuGameScript : MonoBehaviour
         SceneTransition.SwitchToScene("Play");
     }
 
-    // Для свапа на сцену меню
     public void Menu()
     {
         SceneTransition.SwitchToScene("Menu");
+    }
+
+    // При выборе апргрейда активировать там короче улучшение
+    public void UpgradeDrill()
+    {
+        enterDrill.UpgradeDrill();
+    }
+
+    // При выборе входа снова там активировать вход
+    public void EnterDrill()
+    {
+        enterDrill.Enter(); 
     }
 
     // Для открытия кнопок настроек и скрытия панели стандартной
