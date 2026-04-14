@@ -22,7 +22,7 @@ public class EnemyCrawler : MonoBehaviour
     [SerializeField] private int contactDamage = 1;
 
     [Header("Жизни")]
-    [SerializeField] private int hp = 3;
+    [SerializeField] private float hp = 3f;
     private Transform drillTarget;
     private float wanderPhaseOffsett;
     private float currentVerticalSpeed;
@@ -32,7 +32,6 @@ public class EnemyCrawler : MonoBehaviour
     void Start()
     {
         currentVerticalSpeed = baseVerticalSpeed + Random.Range(-verticalSpeedVariation, verticalSpeedVariation);
-
         wanderPhaseOffsett = Random.Range(0f, 100f);
         jitterSeed = Random.Range(0f, 1000f);
     }
@@ -47,19 +46,16 @@ public class EnemyCrawler : MonoBehaviour
     {
         if (drillTarget == null) return;
 
-        // Основная синусоида
         float wanderPhase = Time.time * wanderFrequency + wanderPhaseOffsett;
         float sineWander = Mathf.Sin(wanderPhase) * wanderRadius;
         
-        // Плавное дрожание через шум Перлина (не резкий рандом!)
+        // Через шум Перлина 
         float jitter = Mathf.PerlinNoise(Time.time * jitterSpeed, jitterSeed) * 2f - 1f; // диапазон [-1; 1]
         jitter *= wanderJitter; // масштабируем силу
         
-        // Итоговое целевое смещение: синус + дрожание
         float targetXOffset = sineWander + jitter;
         float targetX = drillTarget.position.x + targetXOffset;
         
-        // Плавное движение к цели по X
         float currentX = transform.position.x;
         float newX = Mathf.SmoothDamp(currentX, targetX, ref driftVelocity, driftFactor);
 
@@ -77,10 +73,10 @@ public class EnemyCrawler : MonoBehaviour
 
         transform.position = new Vector3(newX, newY, transform.position.z);
         
-        // Визуальное покачивание (опционально)
+        // Покачивания вправо-влево
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Sin(Time.time * 10) * 5f);
 
-        // Удаление если улетел слишком далеко
+        // Удаление жука если улетел далеко (ну а вдруг)
         if (drillTarget != null && transform.position.y > drillTarget.position.y + 15f)
         {
             Destroy(gameObject);
@@ -92,7 +88,7 @@ public class EnemyCrawler : MonoBehaviour
         drillTarget = target;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
         if (hp <= 0) Die();

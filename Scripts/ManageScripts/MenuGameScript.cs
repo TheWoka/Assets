@@ -7,14 +7,27 @@ public class MenuGameScript : MonoBehaviour
     [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private EnterDrill enterDrill;
     
-    public GameObject panelGameMenu, panelGameSettings, gameOverPanel, menuButton;
+    [Header("Интерфейс")]
+    public GameObject panelGameMenu;
+    public GameObject panelGameSettings;
+    public GameObject gameOverPanel;
+    public GameObject menuButton;
+    public GameObject choosePanel;
+
+    [Header("Улучшения")]
+    public GameObject choosenPanel;
+    public GameObject drillPanel;
+    public GameObject gunPanel;
+    public GameObject characterPanel;
+    public GunUpgrade gunUpgradeScript;
+    public DrillUpgrade drillUpgradeScript;
+    public CharacterUpgrade charUpgradeScript;
+
     void Start()
     {
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
-        if (panelGameSettings != null)
-            panelGameSettings.SetActive(false);
-        if (panelGameMenu != null)
-            panelGameMenu.SetActive(false);
+        panelGameSettings.SetActive(false);
+        panelGameMenu.SetActive(false);
     }
 
     // Реакция на эскейп
@@ -22,8 +35,42 @@ public class MenuGameScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Открытие и закрытие самого меню
-            if (panelGameSettings.activeSelf == false) Continue();
+            if (panelGameSettings.activeSelf == false)
+            {
+                if (choosePanel.activeSelf == true)
+                {
+                    choosePanel.SetActive(false);
+                    menuButton.SetActive(true);
+                }
+
+                else if (choosenPanel.activeSelf == true)
+                {
+                    choosenPanel.SetActive(false);
+                    choosePanel.SetActive(true);
+                }
+
+                else if (drillPanel.activeSelf == true)
+                {
+                    drillPanel.SetActive(false);
+                    choosenPanel.SetActive(true);
+                }
+
+                else if (gunPanel.activeSelf == true)
+                {
+                    gunPanel.SetActive(false);
+                    choosenPanel.SetActive(true);
+                }
+
+                else if (characterPanel.activeSelf == true)
+                {
+                    characterPanel.SetActive(false);
+                    choosenPanel.SetActive(true);
+                }
+
+                else 
+                    Continue();
+                    
+            }
             else if (panelGameSettings.activeSelf == false) Continue();
 
             // Закрытие настроек на эскейп
@@ -49,21 +96,84 @@ public class MenuGameScript : MonoBehaviour
         }
     }
 
+    // Переход в игру
     public void Game()
     {
         SceneTransition.SwitchToScene("Play");
     }
 
+    // В меню
     public void Menu()
     {
         SceneTransition.SwitchToScene("Menu");
     }
 
-    // При выборе апргрейда активировать там короче улучшение
+    // При выборе апргрейда активировать там короче выбор улучшений
     public void UpgradeDrill()
     {
-        enterDrill.UpgradeDrill();
+        if (choosePanel.activeSelf == true) choosePanel.SetActive(false);
+        Debug.Log("Выбор улучшения");
+
+        choosenPanel.SetActive(true);
     }
+
+
+
+    // Панель улучшения бура
+    public void drillUpMenu()
+    {
+        if (choosenPanel.activeSelf == true) choosenPanel.SetActive(false);
+        drillPanel.SetActive(true);
+    }
+    // Покупка скрипта улучшения БУРА
+        public void BuySpeedUp()
+        {
+            drillUpgradeScript.BuyDrSpeedUpgrade();
+        }
+        public void BuyHpUp()
+        {
+            drillUpgradeScript.BuyHpUpgrade();
+        }
+        public void BuyRegenUp()
+        {
+            drillUpgradeScript.BuyRegUpgrade();
+        }
+
+    public void gunUpMenu()
+    {
+        if (choosenPanel.activeSelf == true) choosenPanel.SetActive(false);
+        gunPanel.SetActive(true);
+    }
+
+        // Покупка скрипта улучшения ПУШКИ
+        public void BuyShootUp()
+        {
+            gunUpgradeScript.BuyShootUpgrade();
+        }
+        public void BuyDamageUp()
+        {
+            gunUpgradeScript.BuyDamageUpgrade();
+        }
+        public void BuyReloadUp()
+        {
+            gunUpgradeScript.BuyReloadUpgrade();
+        }
+
+    public void characterUpMenu()
+    {
+        if (choosenPanel.activeSelf == true) choosenPanel.SetActive(false);
+        characterPanel.SetActive(true);
+    }
+
+    // Покупка скрипта улучшения ПЕРСОНАЖА
+        public void BuySpeedCharUp()
+        {
+            charUpgradeScript.BuySpeedCharUpgrade();
+        }
+        public void BuyDigUp()
+        {
+            charUpgradeScript.BuyDigUpgrade();
+        }
 
     // При выборе входа снова там активировать вход
     public void EnterDrill()

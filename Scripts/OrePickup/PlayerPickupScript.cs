@@ -53,21 +53,21 @@ public class PlayerResources : MonoBehaviour
     {
         if (oreTraviyText != null)
         {
-            oreTraviyText.text = $"Травия: {traviyCount}";
+            oreTraviyText.text = $"{traviyCount}";
         }
     }
     private void UpdateOreCoalUI()
     {
         if (oreCoalText != null)
         {
-            oreCoalText.text = $"Угля: {coalCount}";
+            oreCoalText.text = $"{coalCount}";
         }
     }
     private void UpdateOreVibroUI()
     {
         if (oreVibroText != null)
         {
-            oreVibroText.text = $"Вибраниума: {vibraniumCount}";
+            oreVibroText.text = $"{vibraniumCount}";
         }
     }
 }

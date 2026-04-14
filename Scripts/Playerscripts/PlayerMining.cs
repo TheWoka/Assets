@@ -76,4 +76,21 @@ public class PlayerMining : MonoBehaviour
         Gizmos.color = new Color(1, 0.6f, 0, 0.25f);
         Gizmos.DrawWireSphere(transform.position, mineRange);
     }
+
+    // ГЕТТЕР
+    public float GetOreDamage()
+    {
+        return oreDamage;
+    }
+
+    // СЕТТЕР
+    public void SetOreDamage(float newValue)
+    {
+        if (newValue > 10f)
+        {
+            newValue = 10f;
+        }
+
+        oreDamage = newValue;
+    }
 }

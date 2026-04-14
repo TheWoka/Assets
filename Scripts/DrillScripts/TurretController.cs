@@ -14,7 +14,9 @@ public class TurretController : MonoBehaviour
     [SerializeField] private float gizmoRadius = 2.5f;
 
     [Header("Shoot")]
-    [SerializeField] private float timeBtwShots = 0.25f;
+    [SerializeField] private float timeBtwShots = 0.4f;
+    [SerializeField] private float damage = 1f;
+    [SerializeField] private float reload = 4f;
 
     private float shootTimer;
     private bool canControl = false;
@@ -27,9 +29,7 @@ public class TurretController : MonoBehaviour
     void Update()
     {
         if (!canControl) return;
-
         shootTimer += Time.deltaTime;
-
         RotateToMouse();
 
         if (Input.GetMouseButton(0) && shootTimer >= timeBtwShots)
@@ -46,8 +46,6 @@ public class TurretController : MonoBehaviour
 
     void RotateToMouse()
     {
-        if (drillCenter == null) return;
-
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
 
@@ -81,8 +79,13 @@ public class TurretController : MonoBehaviour
     void Shoot()
     {
         if (bulletPrefab == null || shootPos == null) return;
+        GameObject bulletObj = Instantiate(bulletPrefab, shootPos.position, shootPos.rotation);
 
-        Instantiate(bulletPrefab, shootPos.position, shootPos.rotation);
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.SetDamage(damage);
+        }
     }
 
     void OnDrawGizmosSelected()
@@ -117,5 +120,50 @@ public class TurretController : MonoBehaviour
     {
         float rad = angleDeg * Mathf.Deg2Rad;
         return new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f);
+    }
+
+    // ГЕТТЕРЫ
+    public float GetTimeBtwShoots()
+    {
+        return timeBtwShots;
+    }
+    public float GetDamage()
+    {
+        return damage;
+    }
+    public float GetReload()
+    {
+        return reload;
+    }
+
+    // СЕТТЕРЫ
+    public void SetNewTimeBtwShoots(float newValue)
+    {
+        if (newValue < 0.01f)
+        {
+            newValue = 0.01f;
+        }
+
+        timeBtwShots = newValue;
+    }
+
+    public void SetNewDmg(float newValue)
+    {
+        if (newValue > 10f)
+        {
+            newValue = 10f;
+        }
+
+        damage = newValue;
+    }
+
+    public void SetNewReload(float newValue)
+    {
+        if (newValue < 1f)
+        {
+            newValue = 1f;
+        }
+
+        reload = newValue;
     }
 }

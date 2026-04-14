@@ -11,12 +11,9 @@ public class DrillController : MonoBehaviour
     [Header("Скорость")]
     [SerializeField] private float baseSpeed = 5.0f;
 
-    /* [SerializeField] private float speedIncreasePerStop = 1.0f; */ // В УЛУЧШЕНИЕ НАХУЙ
-
-    [SerializeField] private float maxSpeed = 15.0f;
     public bool isActive = false;
     private bool isMoving = false;
-    private float currentSpeed;
+    public float currentSpeed;
     private Rigidbody2D rb;
     private int currentStopIndex = 0;
     public bool IsMoving => isMoving;
@@ -76,4 +73,22 @@ public class DrillController : MonoBehaviour
         isActive = false;
         rb.linearVelocity = Vector2.zero;
     }
+
+    // ГЕТТЕРЫ
+    public float GetDrillSpeed()
+    {
+        return baseSpeed;
+    }
+
+    // СЕТТЕРЫ
+    public void SetDrillSpeed(float newValue)
+    {
+        if (newValue > 15f)
+        {
+            newValue = 15f;
+        }
+
+        currentSpeed = newValue;
+    }
+
 }

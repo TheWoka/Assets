@@ -12,7 +12,12 @@ public class ParalaxScript : MonoBehaviour
 
     void Awake()
     {
-        if (targetCamera == null) targetCamera = Camera.main;
+        // Если забуду в сцене поставить нужную
+        if (targetCamera == null) 
+        {
+            targetCamera = Camera.main; 
+            Debug.Log("Установил стандартную камеру. ParalaxScript");
+        }
         camTransform = targetCamera.transform;
         startZ = transform.position.z;
         

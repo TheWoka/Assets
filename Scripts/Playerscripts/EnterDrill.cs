@@ -19,6 +19,7 @@ public class EnterDrill : MonoBehaviour
 
     [Header("Приколы с UI")]
     [SerializeField] private GameObject choosePanel;
+    [SerializeField] private GameObject menuButton;
 
     private bool isInside = false;
     private bool canEnterDrill = true;
@@ -73,6 +74,7 @@ public class EnterDrill : MonoBehaviour
         if (choosePanel.activeSelf == false) 
         {
             choosePanel.SetActive(true);
+            menuButton.SetActive(false);
             Debug.Log("Активация панели");
         }
     }
@@ -95,12 +97,6 @@ public class EnterDrill : MonoBehaviour
 
         Debug.Log("Запуск бура");
         drill.StartRide();
-    }
-
-    public void UpgradeDrill()
-    {
-        Debug.Log("Тут будет улучшение бура!");
-        choosePanel.SetActive(false);
     }
 
     void HandleReachedStop()

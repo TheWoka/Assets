@@ -13,6 +13,7 @@ public class VillageDrill : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("Попытка входа в бур");
             TryEnter();
         }
     }
@@ -22,6 +23,7 @@ public class VillageDrill : MonoBehaviour
         float distance = Vector2.Distance(transform.position, drill.transform.position);
         if (distance > enterDistance) return;
 
+        Debug.Log("Запуск смены сцены");
         SceneTransition.SwitchToScene("Play");
     }
 

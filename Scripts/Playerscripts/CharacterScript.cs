@@ -83,4 +83,21 @@ public class CharacterScript : MonoBehaviour
         else if (moveInput.x < -0.01f)
             spr.flipX = true;
     }
+
+    // ГЕТТЕРЫ 
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    // СЕТТЕРЫ
+    public void SetNewSpeed(float newValue)
+    {
+        if (newValue > 10f)
+        {
+            newValue = 10f;
+        }
+
+        speed = newValue;
+    }
 }

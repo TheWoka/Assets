@@ -13,6 +13,7 @@ public class Ore: MonoBehaviour
     private Coroutine pulseCoroutine;
     private Vector3 originalScale;
     private float lastHitEffectTime;
+    private TileLightingManager lightingManager;
 
     // Назначение всякого
     void Start()
@@ -20,6 +21,7 @@ public class Ore: MonoBehaviour
         currentHealth = oreHealth;
         originalScale = transform.localScale;
         lastHitEffectTime = -hitEffectCooldown;
+        lightingManager = FindObjectOfType<TileLightingManager>();
     }
 
     // Руда сосет урон
@@ -27,7 +29,6 @@ public class Ore: MonoBehaviour
     {
         if (isBroken) return;
         currentHealth -= amount;
-        Debug.Log($"Руда: {currentHealth}/{oreHealth}");
 
         if (Time.time >= lastHitEffectTime + hitEffectCooldown)
         {
@@ -69,7 +70,7 @@ public class Ore: MonoBehaviour
     private void BreakOre()
     {
         isBroken = true;
-
+        
         if (breakParticle != null)
             Instantiate(breakParticle, transform.position, Quaternion.identity);
 
@@ -82,5 +83,7 @@ public class Ore: MonoBehaviour
         }
         
         Destroy(gameObject);
+        /* if (lightingManager != null)
+            lightingManager.InvalidateLighting(); */
     }
 }

@@ -82,7 +82,7 @@ public class SceneTransition : MonoBehaviour
         if (asyncOp != null && !asyncOp.isDone)
         {
             asyncOp.allowSceneActivation = true;
-            Debug.Log("[SceneTransition] Scene activation allowed.");
+            Debug.Log("Активация сцены");
         }
     }
 
@@ -91,7 +91,7 @@ public class SceneTransition : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("sceneEnd");
-            Debug.Log("[SceneTransition] Exit animation triggered.");
+            Debug.Log("Выход анимации.");
         }
 
         isHidingPanel = true;

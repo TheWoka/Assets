@@ -9,8 +9,7 @@ public class MenuScript : MonoBehaviour
     void Start()
     {
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
-        if (panelSettings != null)
-            panelSettings.SetActive(false);
+        panelSettings.SetActive(false);
     }
 
     public void Update()
@@ -43,13 +42,13 @@ public class MenuScript : MonoBehaviour
         if (panelSettings.activeSelf == false)
         {
             panelSettings.SetActive(true);
-            if (panelMenu != null) panelMenu.SetActive(false); 
+            panelMenu.SetActive(false); 
             Debug.Log("Открыл настройки");
         }
         else if (panelSettings.activeSelf == true)
         {
             panelSettings.SetActive(false);
-            if (panelMenu != null) panelMenu.SetActive(true); 
+            panelMenu.SetActive(true); 
             Debug.Log("Закрыл настройки");
         }
     }

@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a6da5a508631149a849e955e6d56f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCrawler
-  baseVerticalSpeed: 3
+  baseVerticalSpeed: 3.5
   verticalSpeedVariation: 0.4
   horizontalSpeed: 3
   wanderRadius: 3
@@ -189,4 +189,4 @@ MonoBehaviour:
   driftFactor: 0.3
   followDrillVertically: 1
   contactDamage: 1
-  hp: 2
+  hp: 4

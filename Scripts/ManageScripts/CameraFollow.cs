@@ -6,6 +6,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] float follow_speed = 5f;
 
     [Header("Zoom")]
+    // Плавный зум
+    [SerializeField] private float zoomSmoothness = 3f;
     public float normalSize = 5f;
     public float zoomedOutSize = 7f;
 
@@ -22,6 +24,8 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     private Camera cam;
     private float currentZ;
+    // Для интерполяци-и-и-и
+    private float targetZoomSize;
     private float currentZoomSize;
     private Vector3 currentMouseOffset;
 
@@ -29,13 +33,25 @@ public class CameraFollow : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         currentZ = transform.position.z;
+        currentZoomSize = normalSize;
+        targetZoomSize = normalSize;
         cam.orthographicSize = normalSize;
     }
 
     void FixedUpdate()
     {
-        if (!target) return;
+        // Тута плавное изменение зума при приближении поэтапно 
+        if (!Mathf.Approximately(currentZoomSize, targetZoomSize))
+        {
+            currentZoomSize = Mathf.Lerp(
+                currentZoomSize, 
+                targetZoomSize, 
+                zoomSmoothness * Time.deltaTime
+            );
+            cam.orthographicSize = currentZoomSize;
+        }
 
+        if (!target) return;
         Vector3 targetPos = target.position;
 
         // Смещение камеры от мыши при включенном режиме
@@ -93,7 +109,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (cam == null) cam = GetComponent<Camera>();
 
-        cam.orthographicSize = inDrill ? zoomedOutSize : normalSize;
+        targetZoomSize = inDrill ? zoomedOutSize : normalSize;
         useMouseLookInDrill = inDrill;
 
         OnZoomChanged?.Invoke(cam.orthographicSize);

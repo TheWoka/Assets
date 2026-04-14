@@ -21,17 +21,13 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        if (drillHealth == null && drill != null)
-            drillHealth = drill.GetComponent<DrillHealth>();
-
-        if (drill != null)
-            drill.OnReachedStop += OnFloorReached;
+        drillHealth = drill.GetComponent<DrillHealth>();
+        drill.OnReachedStop += OnFloorReached;
     }
 
     void OnDestroy()
     {
-        if (drill != null)
-            drill.OnReachedStop -= OnFloorReached;
+        drill.OnReachedStop -= OnFloorReached;
     }
 
     void Update()

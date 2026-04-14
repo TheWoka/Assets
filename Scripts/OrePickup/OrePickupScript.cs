@@ -58,7 +58,6 @@ public class OrePickupScript : MonoBehaviour
                     playerResources.AddVibroOre(1);
                     break;
                 default:
-                    Debug.LogWarning("Неизвестный тип руды: " + oreTag);
                     break;
             }
         }

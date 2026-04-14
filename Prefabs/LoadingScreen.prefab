@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c669daa255c0ed849a604aac01f2b6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  loadText: {fileID: 0}
+  loadText: {fileID: 8600528874897834676}
   loadingPanel: {fileID: 5463239772304830478}
   exitAnimDuration: 1
 --- !u!1 &7254712309454366505
