@@ -6,6 +6,7 @@ public class MenuGameScript : MonoBehaviour
     [SerializeField] private Vector2 hotSpot = Vector2.zero;
     [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private EnterDrill enterDrill;
+
     
     [Header("Интерфейс")]
     public GameObject panelGameMenu;
@@ -118,7 +119,6 @@ public class MenuGameScript : MonoBehaviour
     }
 
 
-
     // Панель улучшения бура
     public void drillUpMenu()
     {
@@ -178,6 +178,7 @@ public class MenuGameScript : MonoBehaviour
     // При выборе входа снова там активировать вход
     public void EnterDrill()
     {
+        menuButton.SetActive(true);
         enterDrill.Enter(); 
     }
 

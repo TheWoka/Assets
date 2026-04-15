@@ -19,6 +19,15 @@ public class DrillHealth : MonoBehaviour
 
         if (drillController == null)
             drillController = GetComponent<DrillController>();
+
+        if (drillController != null)
+            drillController.OnReachedStop += RegenerateHealth;
+    }
+
+    void OnDestroy()
+    {
+        if (drillController != null)
+            drillController.OnReachedStop -= RegenerateHealth;
     }
 
     public void TakeDamage(int damage)
@@ -79,5 +88,13 @@ public class DrillHealth : MonoBehaviour
         }
 
         regen = newValue;
+    }
+
+    void RegenerateHealth()
+    {
+        if (isDead || regen <= 0) return;
+        
+        currentHealth = Mathf.Min(currentHealth + regen, maxHealth);
+        Debug.Log($"Бур восстановил {regen} HP. Текущее здоровье: {currentHealth}/{maxHealth}");
     }
 }
