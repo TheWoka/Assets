@@ -24,7 +24,7 @@ public class EnterDrill : MonoBehaviour
 
     [Header("Приколы с UI")]
     [SerializeField] private GameObject choosePanel;
-    [SerializeField] private GameObject menuButton;
+    [SerializeField] private GameObject charLight;
 
     [Header("Подсказка входа")]
     [SerializeField] private RectTransform promptText;
@@ -115,7 +115,6 @@ public class EnterDrill : MonoBehaviour
         if (choosePanel.activeSelf == false) 
         {
             choosePanel.SetActive(true);
-            menuButton.SetActive(false);
             Debug.Log("Активация панели");
         }
     }
@@ -125,6 +124,7 @@ public class EnterDrill : MonoBehaviour
         isInside = true;
         choosePanel.SetActive(false);
         inventoryInter.SetActive(false);
+        charLight.SetActive(false);
 
         playerScript.enabled = false;
         playerRb.linearVelocity = Vector2.zero;
@@ -157,6 +157,7 @@ public class EnterDrill : MonoBehaviour
         playerRb.simulated = true;
         playerSprite.enabled = true;
         inventoryInter.SetActive(true);
+        charLight.SetActive(true);
 
         transform.position = drill.transform.position + Vector3.right * 1.5f;
 

@@ -9,6 +9,8 @@ public class PlayerResources : MonoBehaviour
     [SerializeField] private int vibraniumCount = 0;
 
     [SerializeField] private TextMeshProUGUI oreTraviyText, oreCoalText, oreVibroText; 
+    [SerializeField] private TextMeshProUGUI oreTraviyTextMenu, oreCoalTextMenu, oreVibroTextMenu; 
+
     
     void Start()
     {
@@ -48,22 +50,19 @@ public class PlayerResources : MonoBehaviour
     }
 
     // СЕТТЕРЫ 
-    public void SetOreTravCount(int spendOre)
+    public void SetOreTravCount(int value)
     {
-        if (traviyCount - spendOre < 0) traviyCount = 0;
-        else traviyCount -= spendOre;
+        traviyCount = Mathf.Max(0, value);
         UpdateOreTravUI();
     }
-    public void SetOreCoalCount(int spendOre)
+    public void SetOreCoalCount(int value)
     {
-        if (coalCount - spendOre < 0) coalCount = 0;
-        else coalCount -= spendOre;
+        coalCount = Mathf.Max(0, value);
         UpdateOreCoalUI();
     }
-    public void SetOreVibroCount(int spendOre)
+    public void SetOreVibroCount(int value)
     {
-        if (vibraniumCount - spendOre < 0) vibraniumCount = 0;
-        else vibraniumCount -= spendOre;
+        vibraniumCount = Mathf.Max(0, value);
         UpdateOreVibroUI();
     }
     
@@ -74,6 +73,7 @@ public class PlayerResources : MonoBehaviour
         if (oreTraviyText != null)
         {
             oreTraviyText.text = $"{traviyCount}";
+            oreTraviyTextMenu.text = $"{traviyCount}";
         }
     }
     private void UpdateOreCoalUI()
@@ -81,6 +81,7 @@ public class PlayerResources : MonoBehaviour
         if (oreCoalText != null)
         {
             oreCoalText.text = $"{coalCount}";
+            oreCoalTextMenu.text = $"{coalCount}";
         }
     }
     private void UpdateOreVibroUI()
@@ -88,6 +89,7 @@ public class PlayerResources : MonoBehaviour
         if (oreVibroText != null)
         {
             oreVibroText.text = $"{vibraniumCount}";
+            oreVibroTextMenu.text = $"{vibraniumCount}";
         }
     }
 }

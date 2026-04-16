@@ -13,6 +13,7 @@ public class VillageDrill : MonoBehaviour
     [SerializeField] private float followSmooth = 6f;
     [SerializeField] private float fadeSpeed = 5f;
     [SerializeField] private Vector2 textOffset = new Vector2(0, 60);
+    [SerializeField] private GameObject lightChar;
 
     private float currentAlpha = 0f;
     private Color baseTextColor;
@@ -94,6 +95,7 @@ public class VillageDrill : MonoBehaviour
 
         promptText.gameObject.SetActive(false);
         promptTextComponent.gameObject.SetActive(false);
+        lightChar.SetActive(false);
 
         Debug.Log("Запуск смены сцены");
         SceneTransition.SwitchToScene("Play");

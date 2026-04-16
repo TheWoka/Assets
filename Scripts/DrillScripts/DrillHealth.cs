@@ -6,9 +6,9 @@ public class DrillHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private int regen = 0;
     [SerializeField] private DrillController drillController;
+    [SerializeField] private GameObject deathPanel;
 
     private int currentHealth;
-    private MenuGameScript menuGame;
     private bool isDead = false;
     public int CurrentHealth => currentHealth;
     public bool IsDead => isDead;
@@ -54,8 +54,8 @@ public class DrillHealth : MonoBehaviour
         if (drillController != null)
             drillController.StopDrill();
 
-        if (menuGame != null)
-            menuGame.ShowGameOverPanel();
+        if (deathPanel != null)
+            deathPanel.SetActive(true);
     }
 
     // ГЕТТЕРЫ 

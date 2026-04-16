@@ -12,7 +12,6 @@ public class MenuGameScript : MonoBehaviour
     public GameObject panelGameMenu;
     public GameObject panelGameSettings;
     public GameObject gameOverPanel;
-    public GameObject menuButton;
     public GameObject choosePanel;
 
     [Header("Улучшения")]
@@ -38,10 +37,19 @@ public class MenuGameScript : MonoBehaviour
         {
             if (panelGameSettings.activeSelf == false)
             {
-                if (choosePanel.activeSelf == true)
+                if (characterPanel.activeSelf == true)
                 {
-                    choosePanel.SetActive(false);
-                    menuButton.SetActive(true);
+                    characterPanel.SetActive(false);
+                }
+
+                else if (drillPanel.activeSelf == true)
+                {
+                    drillPanel.SetActive(false);
+                }
+
+                else if (gunPanel.activeSelf == true)
+                {
+                    gunPanel.SetActive(false);
                 }
 
                 else if (choosenPanel.activeSelf == true)
@@ -50,22 +58,9 @@ public class MenuGameScript : MonoBehaviour
                     choosePanel.SetActive(true);
                 }
 
-                else if (drillPanel.activeSelf == true)
+                else if (choosePanel.activeSelf == true)
                 {
-                    drillPanel.SetActive(false);
-                    choosenPanel.SetActive(true);
-                }
-
-                else if (gunPanel.activeSelf == true)
-                {
-                    gunPanel.SetActive(false);
-                    choosenPanel.SetActive(true);
-                }
-
-                else if (characterPanel.activeSelf == true)
-                {
-                    characterPanel.SetActive(false);
-                    choosenPanel.SetActive(true);
+                    choosePanel.SetActive(false);
                 }
 
                 else 
@@ -88,12 +83,10 @@ public class MenuGameScript : MonoBehaviour
         if (panelGameMenu.activeSelf == false)
         {
             panelGameMenu.SetActive(true);
-            menuButton.SetActive(false);
         }
         else if (panelGameMenu.activeSelf == true)
         {
             panelGameMenu.SetActive(false);
-            menuButton.SetActive(true);
         }
     }
 
@@ -122,8 +115,9 @@ public class MenuGameScript : MonoBehaviour
     // Панель улучшения бура
     public void drillUpMenu()
     {
-        if (choosenPanel.activeSelf == true) choosenPanel.SetActive(false);
         drillPanel.SetActive(true);
+        gunPanel.SetActive(false);
+        characterPanel.SetActive(false);
     }
     // Покупка скрипта улучшения БУРА
         public void BuySpeedUp()
@@ -141,8 +135,9 @@ public class MenuGameScript : MonoBehaviour
 
     public void gunUpMenu()
     {
-        if (choosenPanel.activeSelf == true) choosenPanel.SetActive(false);
+        drillPanel.SetActive(false);
         gunPanel.SetActive(true);
+        characterPanel.SetActive(false);
     }
 
         // Покупка скрипта улучшения ПУШКИ
@@ -161,8 +156,9 @@ public class MenuGameScript : MonoBehaviour
 
     public void characterUpMenu()
     {
-        if (choosenPanel.activeSelf == true) choosenPanel.SetActive(false);
-        characterPanel.SetActive(true);
+        drillPanel.SetActive(false);
+        gunPanel.SetActive(false);
+        characterPanel.SetActive(true); 
     }
 
     // Покупка скрипта улучшения ПЕРСОНАЖА
@@ -178,7 +174,6 @@ public class MenuGameScript : MonoBehaviour
     // При выборе входа снова там активировать вход
     public void EnterDrill()
     {
-        menuButton.SetActive(true);
         enterDrill.Enter(); 
     }
 
@@ -204,7 +199,6 @@ public class MenuGameScript : MonoBehaviour
         if (gameOverPanel != null)
         {
             panelGameMenu.SetActive(false);
-            menuButton.SetActive(false);
             gameOverPanel.SetActive(true);
         }
     }
